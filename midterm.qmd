@@ -7,7 +7,7 @@ editor: visual
 
 ## Introduction
 
-Force production asymmetry between limbs is often used as a predictor of future injury, with asymmetries greater than 10-15% being considered at risk. Increased symmetry as a result of rehabilitation can also be used as a marker of success. Although used as a predictor of future injury, especially in ACL rehab patients, the effect of interlimb force production asymmetry is less clear as it relates to performance. A systematic review evaluating the effects of inter-limb asymmetries on physical and sports performance found a high rate of asymmetry across a range of physical quantities. While not a consistent finding, they also concluded that asymmetry has a detrimental effect on performance. Single leg and horizontal jumps have been shown to detect asymmetries, but their effect on Change of Direction performance appears inconclusive. Some studies have even shown a positive impact of asymmetry in cycling and no effect in swimming. During bilateral jumping tasks, it has been shown that a significant difference in the asymmetry between landing and take off phases exists.
+Force production asymmetry between limbs is often used as a predictor of future injury, with asymmetries greater than 10-15% being considered at risk (1). Increased symmetry as a result of rehabilitation can also be used as a marker of success (1). Although used as a predictor of future injury, especially in ACL rehab patients (2), the effect of interlimb force production asymmetry is less clear as it relates to performance. A systematic review (1) evaluating the effects of inter-limb asymmetries on physical and sports performance found a high rate of asymmetry across a range of physical quantities. While not a consistent finding, they also concluded that asymmetry has a detrimental effect on performance. Single leg and horizontal jumps have been shown to detect asymmetries, but their effect on Change of Direction performance appears inconclusive. Some studies have even shown a positive impact of asymmetry in cycling (3) and no effect in swimming (4). During bilateral jumping tasks, it has been shown that a significant difference in the asymmetry between landing and take off phases exists (5).
 
 The counter-movement jump is divided into 5 phases with different biomechanical demands: Unweighing, Braking, Propulsion, Flight, and Landing. This project aimed to calculate the average asymmetry between limbs during each phase, as well as visualize the change in asymmetry across the course of the jump. By relating the asymmetry score to the phase being performed, corrective exercise mimicking the demands of that phase may be implemented in an attempt to restore symmetry.
 
@@ -191,3 +191,16 @@ print(paste(round(avg_landing_asymmetry, 4), "%", sep=""))
 ```
 
 ## Conclusion
+
+The subject displayed average asymmetries greater than 10% during the Standing(11.63 %), Unweighing (11.45%), and Landing phases (17.85%). Interestingly, the subject's asymmetry decreases as they transition from passive phases (Standing and Unweighing) to power absorption and generation phases (Braking and Propulsion). The large difference between takeoff and landing symmetry coincide with results from Cone et al. Based on these results, the subject should use exercise strategies that target static balance and landing mechanics in order to reduce risk for future injury.
+
+References
+
+1.  Bishop, C., Turner, A., & Read, P. (2018). Effects of inter-limb asymmetries on physical and sports performance: A systematic review. Journal of sports sciences, 36(10), 1135-1144.
+2.  Noyes, F. R., Barber, S. D., & Mangine, R. E. (1991). Abnormal lower limb
+    symmetry determined by function hop tests after anterior cruciate
+    ligament rupture. The American Journal of Sports Medicine, 19, 513--
+    518. doi:10.1177/036354659101900518
+3.  Bini, R. R., & Hume, P. A. (2015). Relationship between pedal force asymmetry and performance in cycling time trial. Journal of Sports Medicine and Physical Fitness, 55, 898--982.
+4.  Morouco, P. G., Marinho, D. A., Fernandes, R. J., & Marques, M. C. (2015). Quantification of upper limb kinetic asymmetries in front crawl swim- ming. Human Movement Science, 40, 185--192. doi:10.1016/j. humov.2014.12.012 
+5.  Cone, S. M., & Lee, S. (2021). Lower limb force asymmetries during landing and jumping exercises: A pilot study. International Journal of Exercise Science, 14(1), 544.
