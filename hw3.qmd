@@ -1,0 +1,67 @@
+---
+title: "homework 3"
+format: html
+editor: visual
+---
+
+## Getting Started
+
+```{r}
+#| output: false
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(tidytext)
+library(tidyverse)
+data <- read_csv("https://raw.githubusercontent.com/USCbiostats/data-science-data/master/03_pubmed/pubmed.csv")
+```
+
+```{r}
+head(data)
+tail(data)
+```
+
+# Question 1
+
+```{r}
+data |> unnest_tokens(output=word, input=abstract) |>
+  anti_join(stop_words, by = c("word")) |>
+  count(word, sort = TRUE) |>
+  top_n(20, n)
+
+data |> unnest_tokens(word, abstract) |>
+  count(word, sort = TRUE) |>
+  top_n(20, n)
+```
+
+# Question 2
+
+```{r}
+bigrams <- data %>%
+  unnest_ngrams(ngram, abstract, n = 2) 
+
+bigrams %>%
+  count(ngram, sort = TRUE) %>%
+  top_n(10, n) %>%
+  ggplot(aes(n, fct_reorder(ngram, n))) +
+  geom_col()
+```
+
+# Question 3
+
+```{r}
+numbers_df <- data.frame(word=as.character(0:50))
+
+results <- data |> unnest_tokens(output=word, input=abstract)|>
+  anti_join(stop_words, by = c("word")) |>
+  anti_join(numbers_df, by = c("word")) |>
+  count(word, term) |>
+  bind_tf_idf(term=word, document=term, n=n) |>
+  group_by(term) |>
+  top_n(n=5, wt=tf_idf) |>
+  arrange(desc(tf_idf)) |>
+  ungroup() |>
+  arrange(term)
+
+print(n=50, results)
+```
